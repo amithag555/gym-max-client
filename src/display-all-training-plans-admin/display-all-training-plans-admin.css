@@ -1,0 +1,9 @@
+.table_data_div {
+  height: 60px;
+  cursor: pointer;
+  background-color: #f7f7f7;
+}
+
+.table_div {
+  margin: auto;
+}

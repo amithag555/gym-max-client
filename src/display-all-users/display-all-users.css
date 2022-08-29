@@ -1,0 +1,23 @@
+.user_edit_btn {
+  border: none;
+  color: white;
+  padding: 6px;
+  background-color: #0b2a97;
+  border-radius: 50%;
+}
+
+.user_delete_btn {
+  border: none;
+  color: white;
+  padding: 6px;
+  background-color: hsl(0, 100%, 36%);
+  border-radius: 50%;
+}
+
+.user_password_btn {
+  border: none;
+  color: white;
+  padding: 6px;
+  background-color: hsl(43, 100%, 48%);
+  border-radius: 50%;
+}

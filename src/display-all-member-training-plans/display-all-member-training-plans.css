@@ -1,0 +1,29 @@
+.training_plan_list_link {
+  text-decoration: none;
+  color: black;
+  background-color: hsl(0, 0%, 97%);
+  /* background-color: hsl(227, 86%, 96%); */
+  font-weight: 400;
+  font-size: 0.9em;
+  border-radius: 1em !important;
+  border-bottom: 2px solid #0b2a97;
+  /* color: #0b2a97; */
+}
+
+.training_plan_list_link:hover {
+  background-color: #0b2a97;
+  color: white;
+}
+
+.add_btn {
+  background-color: #d8e0fc;
+  color: #0b2a97;
+  text-decoration: none;
+  font-size: 0.9em !important;
+  font-weight: 500;
+}
+
+.add_btn:hover {
+  color: white;
+  background-color: #0b2a97;
+}

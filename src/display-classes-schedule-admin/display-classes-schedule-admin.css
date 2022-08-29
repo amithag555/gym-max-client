@@ -1,0 +1,44 @@
+.day_div {
+  width: 13%;
+  text-align: center;
+  padding: 4px;
+  font-size: 1.2em;
+  background-color: #0b2a97;
+  color: white;
+}
+
+.col_class_div {
+  width: 13%;
+}
+
+.class_div {
+  padding: 12px;
+  min-height: 200px;
+  background-color: #d8e0fc;
+  color: #0b2a97;
+  font-size: 0.9em;
+}
+
+.edit_btn {
+  border: none;
+  color: white;
+  padding: 5px;
+  background-color: transparent;
+  border-radius: 2em;
+}
+
+.edit_btn:hover {
+  background-color: #0b2a97;
+}
+
+.time_span {
+  font-size: 1.1em;
+}
+
+.badge {
+  border-radius: 1.25rem;
+  font-size: 14px;
+  padding: 4px 10px;
+  border: 1px solid transparent;
+  color: black;
+}

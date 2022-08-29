@@ -1,38 +1,95 @@
-.App {
-  text-align: center;
+body {
+  font-family: "Roboto", "Helvetica", "Arial", "sans-serif";
+  font-weight: 500;
+  background-color: hsl(0, 0%, 97%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.confirm_form_btn {
+  border: none;
+  background-color: transparent;
+  border-radius: 1.25em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.confirm_training_plan_btn {
+  background-color: #0b2a97;
+  color: white;
+  border: none;
+  border-radius: 1.25em;
+  font-size: 0.8em;
+  width: 100px;
+  padding: 8px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.create_training_plan_btn {
+  background-color: hsl(227, 86%, 92%);
+  color: #0b2a97;
+  border: none;
+  border-radius: 1.25em;
+  font-size: 0.8em;
+  width: 150px;
+  padding: 8px 0;
+  font-weight: 500;
+}
+
+.create_training_plan_btn:hover {
+  background-color: hsl(227, 86%, 85%);
+}
+
+.confirm_training_plan_btn:hover {
+  background-color: hsl(227, 86%, 25%);
+}
+
+.cancel_training_plan_btn {
+  background-color: hsl(0, 0%, 90%);
+  border: none;
+  border-radius: 1.25em;
+  font-size: 0.8em;
+  width: 100px;
+  padding: 8px 0;
+}
+
+.admin_background_training_plan_div {
+  min-height: 500px;
+  border-radius: 1.5em !important;
+  background-color: #f7f7f7;
+  padding: 32px 0;
+}
+
+.border_radius {
+  border-radius: 1.5em !important;
+}
+
+.border_radius_top {
+  border-top-left-radius: 1.5em !important ;
+  border-top-right-radius: 1.5em !important ;
+}
+
+.border_radius_bottom {
+  border-bottom-left-radius: 1.5em !important ;
+  border-bottom-right-radius: 1.5em !important ;
+}
+
+.login_btn_div {
+  border: none;
+  border-radius: 1em;
+  background-color: white;
+  color: #0b2a97;
+  font-weight: 600;
+}
+
+.login_div {
+  background-color: #0b2a97;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.font_color_blue {
+  color: #0b2a97;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.background_color_blue {
+  background-color: #0b2a97;
+}
+
+.light_grey_background_color {
+  background-color: #f7f7f7;
 }

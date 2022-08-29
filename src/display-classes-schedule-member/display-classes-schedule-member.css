@@ -1,0 +1,74 @@
+.main_list_div {
+  border-radius: 1.25em;
+}
+
+.day_btn {
+  width: 13%;
+  border: none;
+  background-color: #0b2a97;
+  color: white;
+  border-radius: 0.8em;
+  font-size: 0.8em;
+  padding: 4px;
+}
+
+.list_item_row {
+  font-size: 0.8em;
+  border-radius: 1.25em;
+}
+
+.list_item_row:hover {
+  background-color: #f4f5f9;
+}
+
+.time_item_div {
+  width: 15%;
+  background-color: #d8e0fc;
+  color: #0b2a97;
+  border-radius: 1.25em;
+  padding: 8px;
+}
+
+.details_item_div {
+  width: 66%;
+  background-color: #f4f5f9;
+  border-radius: 1.25em;
+  padding: 4px;
+  color: hsl(0, 0%, 43%);
+}
+
+.sign_up_item_btn {
+  border: none;
+  background-color: #0b2a97;
+  color: white;
+  border-radius: 1.25em;
+  padding: 8px;
+}
+
+.cancel_item_btn {
+  border: none;
+  background-color: hsl(0, 100%, 40%);
+  color: white;
+  border-radius: 1.25em;
+  padding: 8px;
+}
+
+.full_item_div {
+  border: none;
+  background-color: #ffbc11;
+  color: hsl(210, 11%, 20%);
+  border-radius: 1.25em;
+  padding: 18px 8px;
+  text-align: center;
+}
+
+.clicked_day_btn {
+  width: 13%;
+  border: none;
+  background-color: #d8e0fc;
+  color: #0b2a97;
+  border-radius: 0.8em;
+  font-size: 0.8em;
+  font-weight: bold;
+  padding: 4px;
+}

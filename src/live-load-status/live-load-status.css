@@ -1,0 +1,9 @@
+.load_icon_div {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(48, 89%, 85%);
+}

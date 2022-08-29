@@ -1,0 +1,15 @@
+.member_edit_btn {
+  border: none;
+  color: white;
+  padding: 6px;
+  background-color: #0b2a97;
+  border-radius: 50%;
+}
+
+.member_delete_btn {
+  border: none;
+  color: white;
+  padding: 6px;
+  background-color: hsl(0, 100%, 36%);
+  border-radius: 50%;
+}
