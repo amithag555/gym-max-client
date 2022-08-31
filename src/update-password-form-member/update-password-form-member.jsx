@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setCurrentTitle } from "../redux/reducers/generalSlice";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -7,10 +7,13 @@ import * as Yup from "yup";
 import { TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { updatePasswordService } from "../services/member.service";
+import { selectCurrentUser, updateCurrentUser } from "../redux/reducers/authSlice";
+import { changeIsFirstLoginSlice } from "../redux/reducers/memberSlice";
 
 export default function UpdatePasswordFormMember() {
   const dispatch = useDispatch();
   const navigation = useNavigate();
+  const currentUser = useSelector(selectCurrentUser);
 
   useEffect(() => {
     dispatch(setCurrentTitle("Change Password"));
@@ -39,13 +42,22 @@ export default function UpdatePasswordFormMember() {
     };
 
     updatePassword(newPassword);
+
+    if (currentUser.isFirstLogin) {
+      dispatch(changeIsFirstLoginSlice());
+    }
   };
 
   const updatePassword = async (_newPassword) => {
     try {
       const response = await updatePasswordService(_newPassword);
       if (response.id) {
-        navigation("/settings");
+        if (currentUser.isFirstLogin) {
+          dispatch(updateCurrentUser(response));
+          navigation("/");
+        } else {
+          navigation("/settings");
+        }
       }
     } catch (error) {
       console.error(error);

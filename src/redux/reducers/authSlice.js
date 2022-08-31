@@ -8,7 +8,6 @@ export const getUserByTokenUsernameSlice = createAsyncThunk(
   "users/getUserByTokenUsername",
   async (_token, { rejectWithValue }) => {
     try {
-      console.log(_token);
       const response = await getUserByTokenUsernameService(_token);
       return response;
     } catch (err) {
@@ -20,7 +19,6 @@ export const getUserByTokenUsernameSlice = createAsyncThunk(
 
 export const userLoginSlice = createAsyncThunk("auth/userLogin", async (_userDetails, { rejectWithValue }) => {
   try {
-    console.log(_userDetails);
     const response = await userLoginService(_userDetails);
     return response;
   } catch (err) {
@@ -33,7 +31,6 @@ export const getMemberByTokenEmailSlice = createAsyncThunk(
   "members/getMemberByTokenEmail",
   async (_token, { rejectWithValue }) => {
     try {
-      console.log(_token);
       const response = await getMemberByTokenEmailService(_token);
       return response;
     } catch (err) {
@@ -45,7 +42,6 @@ export const getMemberByTokenEmailSlice = createAsyncThunk(
 
 export const memberLoginSlice = createAsyncThunk("auth/memberLogin", async (_memberDetails, { rejectWithValue }) => {
   try {
-    console.log(_memberDetails);
     const response = await memberLoginService(_memberDetails);
     return response;
   } catch (err) {
@@ -60,11 +56,6 @@ export const authSlice = createSlice({
   initialState: {
     currentUser: {},
     currentToken: "",
-    // errors: {
-    //   statusCode: "",
-    //   message: "",
-    //   error: "",
-    // },
     errors: "",
   },
 

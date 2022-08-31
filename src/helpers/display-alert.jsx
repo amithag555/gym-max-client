@@ -27,7 +27,8 @@ export default function DisplayAlert(props) {
       props.isForbidden ||
       props.isWorkoutGoalDeleteMode ||
       props.isMemberDeleteMode ||
-      props.isUserDeleteMode
+      props.isUserDeleteMode ||
+      props.isFirstLogin
     ) {
       setOpen(true);
     }
@@ -39,6 +40,7 @@ export default function DisplayAlert(props) {
     props.isWorkoutGoalDeleteMode,
     props.isMemberDeleteMode,
     props.isUserDeleteMode,
+    props.isFirstLogin,
   ]);
 
   const handleClose = (e) => {
@@ -93,6 +95,9 @@ export default function DisplayAlert(props) {
       if (e.target.id === "ok_btn") {
         props.setIsUserDeleteConfirmation(true);
       }
+    } else if (props.isFirstLogin) {
+      props.setIsFirstLogin(false);
+      navigation("/updatePassword");
     }
   };
 

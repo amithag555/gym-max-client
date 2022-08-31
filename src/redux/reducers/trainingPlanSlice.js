@@ -67,7 +67,6 @@ export const getAllTrainingPlansByMemberIdSlice = createAsyncThunk(
 export const editTrainingPlanSlice = createAsyncThunk("trainingPlan/editTrainingPlan", async (_payload) => {
   try {
     const response = await editTrainingPlan(_payload);
-
     return response;
   } catch (err) {
     console.log(err.response.data.message);

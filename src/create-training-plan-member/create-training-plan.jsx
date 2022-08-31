@@ -102,7 +102,7 @@ export default function CreateTrainingPlan() {
                   <div className="shadow rounded-3 px-2 py-3 bg-white">
                     <form onSubmit={handleSubmit(handleRegistration)}>
                       <div className="row justify-content-center p-0 m-0 mt-md-2">
-                        <div className="col-md-6 text-center">
+                        <div className="col-md-6">
                           <TextField
                             className="w-100"
                             label="Enter training plan name"
@@ -117,7 +117,7 @@ export default function CreateTrainingPlan() {
                           </div>
                         </div>
 
-                        <div className="mt-2 mt-md-0 col-md-6 text-center">
+                        <div className="mt-2 mt-md-0 col-md-6">
                           <TextField
                             className="w-100"
                             label="Enter trainer name"

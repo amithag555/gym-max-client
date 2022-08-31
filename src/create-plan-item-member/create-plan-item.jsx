@@ -76,7 +76,6 @@ export default function CreatePlanItem() {
 
   const onDoneBtnClick = (e) => {
     if (currentTrainingPlan.id) {
-      console.log(currentPlanItem);
       dispatch(createPlanItemSlice(currentPlanItem));
 
       if (e.view.frames.screen.width > 500) {

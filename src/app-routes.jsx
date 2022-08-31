@@ -49,13 +49,13 @@ export default function AppRoutes() {
         </Route>
 
         <Route path="/admin" element={<AdminLayout />}>
-          <Route index element={<HomePageAdmin />} />
+          <Route index element={<DisplayClassesScheduleAdmin />} />
+          <Route path="/admin/classesSchedule" element={<DisplayClassesScheduleAdmin />} />
           <Route path="/admin/trainingPlans" element={<DisplayAllTrainingPlansAdmin />} />
           <Route path="/admin/trainingPlan/:id" element={<DisplayTrainingPlan />} />
           <Route path="/admin/createTrainingPlan" element={<CreateTrainingPlan />} />
           <Route path="/admin/createPlanItem" element={<CreatePlanItem />} />
           <Route path="/admin/createExercise" element={<CreatePlanItemExercise />} />
-          <Route path="/admin/classesSchedule" element={<DisplayClassesScheduleAdmin />} />
           <Route path="/admin/loadStatistics" element={<DisplayLoadStatisticsGraphAdmin />} />
           <Route path="/admin/members" element={<DisplayAllMembers />} />
           <Route path="/admin/users" element={<DisplayAllUsers />} />

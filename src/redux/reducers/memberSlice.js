@@ -9,6 +9,7 @@ import {
   changeIsEntryService,
   getMemberByIdService,
   updateImgUrlService,
+  changeIsFirstLoginService,
 } from "../../services/member.service";
 
 export const getAllMembersSlice = createAsyncThunk("members/getAllMembers", async () => {
@@ -97,6 +98,16 @@ export const changeIsEntrySlice = createAsyncThunk("members/isEntry", async () =
   }
 });
 
+export const changeIsFirstLoginSlice = createAsyncThunk("members/isFirstLogin", async () => {
+  try {
+    const response = await changeIsFirstLoginService();
+    return response;
+  } catch (err) {
+    console.log(err);
+    return err.response.data;
+  }
+});
+
 export const updateImgUrlSlice = createAsyncThunk("members/updateImgUrl", async (_payload, { rejectWithValue }) => {
   try {
     const response = await updateImgUrlService(_payload);
@@ -125,7 +136,6 @@ export const memberSlice = createSlice({
       }
     },
     defineCurrentMember: (state, action) => {
-      console.log(action.payload);
       state.currentMember = action.payload;
     },
     removeCurrentMember: (state, action) => {
@@ -209,6 +219,15 @@ export const memberSlice = createSlice({
         }
       })
       .addCase(updateImgUrlSlice.rejected, (state, action) => {
+        state.errors = action.payload;
+      })
+      .addCase(changeIsFirstLoginSlice.fulfilled, (state, action) => {
+        if (action.payload.id) {
+          state.currentMember = action.payload;
+          state.errors = {};
+        }
+      })
+      .addCase(changeIsFirstLoginSlice.rejected, (state, action) => {
         state.errors = action.payload;
       });
   },

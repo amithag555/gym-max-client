@@ -12,6 +12,7 @@ import { decrementClubCountByIdService, incrementClubCountByIdService } from "..
 import { selectCurrentUser, updateCurrentUser } from "../redux/reducers/authSlice";
 import { changeIsEntrySlice, selectCurrentMember } from "../redux/reducers/memberSlice";
 import { io } from "socket.io-client";
+import DisplayAlert from "../helpers/display-alert";
 
 const socket = io("http://localhost:3000");
 
@@ -21,11 +22,16 @@ export default function HomePageMember() {
   const currentUser = useSelector(selectCurrentUser);
   const currentMember = useSelector(selectCurrentMember);
   const [isDisabled, setIsDisabled] = useState(false);
+  const [isFirstLogin, setIsFirstLogin] = useState(false);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getCurrentMemberWorkoutGoalSlice());
+
+    if (currentUser.isFirstLogin) {
+      setIsFirstLogin(true);
+    }
   }, []);
 
   useEffect(() => {
@@ -34,7 +40,6 @@ export default function HomePageMember() {
     });
 
     socket.on("adminConfirmClient", (_data) => {
-      console.log("adminConfirmClient");
       if (_data === socket.id) {
         console.log(_data);
         setIsEntry(true);
@@ -99,7 +104,7 @@ export default function HomePageMember() {
   };
 
   return (
-    <div className="">
+    <div>
       <LiveLoadStatus />
 
       <div className="col-6 mx-auto mt-4 text-center">
@@ -120,6 +125,14 @@ export default function HomePageMember() {
       </div>
 
       <WorkoutGoal />
+
+      <DisplayAlert
+        title="Update password"
+        contentText="Change your password to a strong password that you're not using elsewhere"
+        isTowButtons={false}
+        isFirstLogin={isFirstLogin}
+        setIsFirstLogin={setIsFirstLogin}
+      />
     </div>
   );
 }

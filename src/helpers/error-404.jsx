@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 export default function Error404() {
   return (
@@ -9,15 +8,12 @@ export default function Error404() {
           <div className="col-md-8">
             <div className="text-center">
               <h1 className="">404</h1>
+
               <h4>
                 <i className="text-warning" /> The page you were looking for is not found!
               </h4>
+
               <p>You may have mistyped the address or the page may have moved.</p>
-              <div>
-                <Link className="btn btn-primary" to="#">
-                  Back to Home
-                </Link>
-              </div>
             </div>
           </div>
         </div>

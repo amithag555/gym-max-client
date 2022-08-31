@@ -11,18 +11,7 @@ export const getTrainingPlanById = async (_trainingPlanId) => {
   ).data;
 };
 
-// export const getAllTrainingPlans = async () => {
-//   return await (
-//     await gymMaxApi.get("/trainingPlan", {
-//       headers: {
-//         Authorization: `Bearer ${localStorage[TOKEN_KEY]}`,
-//       },
-//     })
-//   ).data;
-// };
-
 export const getTrainingPlansByPageNumberAndPerPage = async (_payload) => {
-  console.log(_payload);
   return await (
     await gymMaxApi.get(`/trainingPlan?page=${_payload.pageNumber}&perPage=${_payload.perPage}`, {
       headers: {
@@ -43,7 +32,6 @@ export const getTrainingPlansCountService = async () => {
 };
 
 export const getTrainingPlansByMemberIdPageNumberAndPerPage = async (_payload) => {
-  console.log(_payload);
   return await (
     await gymMaxApi.get(
       `/trainingPlan/member/byPage/${_payload.memberId}?page=${_payload.pageNumber}&perPage=${_payload.perPage}`,
@@ -57,7 +45,6 @@ export const getTrainingPlansByMemberIdPageNumberAndPerPage = async (_payload) =
 };
 
 export const getMemberTrainingPlansCountService = async (_memberId) => {
-  console.log(_memberId);
   return await (
     await gymMaxApi.get(`/trainingPlan/memberTrainingPlansCount/${_memberId}`, {
       headers: {
@@ -168,7 +155,6 @@ export const createPlanItem = async (_newPlanItem) => {
 };
 
 export const createExercise = async (_newExercise) => {
-  console.log(_newExercise);
   return await (
     await gymMaxApi.post(`/trainingPlan/exercise`, _newExercise, {
       headers: {

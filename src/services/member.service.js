@@ -102,7 +102,6 @@ export const updateImgUrlService = async (_payload) => {
 };
 
 export const updatePasswordService = async (_newPassword) => {
-  console.log(_newPassword);
   return await (
     await gymMaxApi.put(`/members/password`, _newPassword, {
       headers: {
@@ -116,6 +115,20 @@ export const changeIsEntryService = async () => {
   return await (
     await gymMaxApi.put(
       `/members/isEntry`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${localStorage[TOKEN_KEY]}`,
+        },
+      }
+    )
+  ).data;
+};
+
+export const changeIsFirstLoginService = async () => {
+  return await (
+    await gymMaxApi.put(
+      `/members/isFirstLogin`,
       {},
       {
         headers: {

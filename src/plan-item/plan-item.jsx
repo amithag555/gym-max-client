@@ -30,8 +30,6 @@ export default function PlanItem(props) {
       id: props.item.id,
     };
 
-    console.log(payload);
-
     dispatch(editPlanItemSlice(payload));
   };
 

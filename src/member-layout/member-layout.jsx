@@ -25,7 +25,6 @@ export default function MemberLayout() {
 
   useEffect(() => {
     if (localStorage[TOKEN_KEY]) {
-      console.log("localStorage[TOKEN_KEY]");
       dispatch(getMemberByTokenEmailSlice(localStorage[TOKEN_KEY]));
     } else {
       navigation("/login");

@@ -41,7 +41,6 @@ export default function AdminLayout() {
 
   useEffect(() => {
     if (localStorage[TOKEN_KEY]) {
-      console.log("localStorage[TOKEN_KEY]");
       dispatch(getUserByTokenUsernameSlice(localStorage[TOKEN_KEY]));
     } else {
       navigation("/adminLogin");

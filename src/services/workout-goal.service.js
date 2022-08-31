@@ -2,7 +2,6 @@ import gymMaxApi from "../gymMaxApi";
 import { TOKEN_KEY } from "../config";
 
 export const getCurrentMemberWorkoutGoalService = async () => {
-  //   console.log(_date);
   return await (
     await gymMaxApi.get(`/workoutGoal`, {
       headers: {
@@ -13,7 +12,6 @@ export const getCurrentMemberWorkoutGoalService = async () => {
 };
 
 export const getMemberWorkoutGoalsByYearService = async (_year) => {
-  console.log(_year);
   return await (
     await gymMaxApi.get(`/workoutGoal/byYear/${_year}`, {
       headers: {
@@ -24,7 +22,6 @@ export const getMemberWorkoutGoalsByYearService = async (_year) => {
 };
 
 export const updateCurrentTrainingNumberByWorkoutGoalIdService = async (_workoutGoalId) => {
-  //   console.log(_workoutGoalId);
   return await (
     await gymMaxApi.put(
       `/workoutGoal/update/${_workoutGoalId}`,
@@ -39,7 +36,6 @@ export const updateCurrentTrainingNumberByWorkoutGoalIdService = async (_workout
 };
 
 export const editCurrentWorkoutGoalService = async (_payload) => {
-  console.log(_payload);
   return await (
     await gymMaxApi.put(`/workoutGoal/${_payload.workoutGoalId}`, _payload.workoutGoalToEdit, {
       headers: {
@@ -50,7 +46,6 @@ export const editCurrentWorkoutGoalService = async (_payload) => {
 };
 
 export const createWorkoutGoalService = async (_newWorkoutGoal) => {
-  //   console.log(_newWorkoutGoal);
   return await (
     await gymMaxApi.post(`/workoutGoal`, _newWorkoutGoal, {
       headers: {
@@ -61,7 +56,6 @@ export const createWorkoutGoalService = async (_newWorkoutGoal) => {
 };
 
 export const deleteWorkoutGoalByIdService = async (_workoutGoalId) => {
-  console.log(_workoutGoalId);
   return await (
     await gymMaxApi.delete(`/workoutGoal/${_workoutGoalId}`, {
       headers: {

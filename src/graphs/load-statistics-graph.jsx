@@ -33,7 +33,7 @@ export default function LoadStatisticsGraph(props) {
       let tempActivitiesPerHour = [];
 
       tempActivitiesPerHour = response.activityPerHour.map((item) => {
-        return { label: `${new Date(item.hour).getHours().toString()}:00`, y: item.count };
+        return { label: `${new Date(item.hour).getUTCHours().toString()}:00`, y: item.count };
       });
 
       setActivitiesPerHour(tempActivitiesPerHour);
