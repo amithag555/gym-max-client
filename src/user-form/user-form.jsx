@@ -69,6 +69,7 @@ export default function UserForm(props) {
   });
 
   const handleRegistration = (data) => {
+    console.log(data);
     if (props.isEditMode) {
       const payload = {
         userToEdit: {

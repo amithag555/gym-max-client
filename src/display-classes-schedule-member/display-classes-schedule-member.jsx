@@ -123,7 +123,9 @@ export default function DisplayClassesScheduleMember() {
                         <div className="time_item_div">
                           <div>
                             {new Date(item.startHour).getUTCHours()}:
-                            {new Date(item.startHour).getUTCMinutes() === 0 ? "00" : new Date(item.startHour).getUTCMinutes()}
+                            {new Date(item.startHour).getUTCMinutes() < 10
+                              ? `0${new Date(item.startHour).getUTCMinutes()}`
+                              : new Date(item.startHour).getUTCMinutes()}
                           </div>
 
                           {longDaysArr[index]}

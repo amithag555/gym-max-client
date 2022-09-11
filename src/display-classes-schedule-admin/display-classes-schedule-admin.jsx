@@ -137,7 +137,9 @@ export default function DisplayClassesScheduleAdmin() {
                         </div>
                         <span className="time_span">
                           {new Date(item.startHour).getUTCHours()}:
-                          {new Date(item.startHour).getUTCMinutes() === 0 ? "00" : new Date(item.startHour).getUTCMinutes()}
+                          {new Date(item.startHour).getUTCMinutes() < 10
+                            ? `0${new Date(item.startHour).getUTCMinutes()}`
+                            : new Date(item.startHour).getUTCMinutes()}
                         </span>{" "}
                         | <span className="time_span">{item.duration} Min</span>
                         <div>Trainer: {item.trainer}</div>
@@ -155,6 +157,7 @@ export default function DisplayClassesScheduleAdmin() {
               );
             })}
           </div>
+
           <GymClassForm
             isEditMode={isEditMode}
             setIsEditMode={setIsEditMode}

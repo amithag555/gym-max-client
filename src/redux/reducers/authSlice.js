@@ -11,8 +11,7 @@ export const getUserByTokenUsernameSlice = createAsyncThunk(
       const response = await getUserByTokenUsernameService(_token);
       return response;
     } catch (err) {
-      console.log(err.response.data.message);
-      return rejectWithValue(err.response.data);
+      return rejectWithValue(err.response.data.message);
     }
   }
 );
@@ -22,7 +21,6 @@ export const userLoginSlice = createAsyncThunk("auth/userLogin", async (_userDet
     const response = await userLoginService(_userDetails);
     return response;
   } catch (err) {
-    console.log(err.response.data.message);
     return rejectWithValue(err.response.data.message);
   }
 });
@@ -34,7 +32,6 @@ export const getMemberByTokenEmailSlice = createAsyncThunk(
       const response = await getMemberByTokenEmailService(_token);
       return response;
     } catch (err) {
-      console.log(err.response.data.message);
       return rejectWithValue(err.response.data.message);
     }
   }
@@ -45,7 +42,6 @@ export const memberLoginSlice = createAsyncThunk("auth/memberLogin", async (_mem
     const response = await memberLoginService(_memberDetails);
     return response;
   } catch (err) {
-    console.log(err.response.data.message);
     return rejectWithValue(err.response.data.message);
   }
 });

@@ -17,8 +17,7 @@ export const getAllMembersSlice = createAsyncThunk("members/getAllMembers", asyn
     const response = await getAllMembers();
     return response;
   } catch (err) {
-    console.log(err.response.data.message);
-    return err.message;
+    return err.response.data;
   }
 });
 
@@ -29,8 +28,7 @@ export const getMembersByPageNumberAndPerPageSlice = createAsyncThunk(
       const response = await getMembersByPageNumberAndPerPageService(_payload);
       return response;
     } catch (err) {
-      console.log(err.response.data.message);
-      return rejectWithValue(err.message);
+      return rejectWithValue(err.response.data);
     }
   }
 );
@@ -42,8 +40,7 @@ export const getMembersByNameOrPhoneNumberSlice = createAsyncThunk(
       const response = await getMembersByNameOrPhoneNumberService(_payload);
       return response;
     } catch (err) {
-      console.log(err);
-      return rejectWithValue(err);
+      return rejectWithValue(err.response.data);
     }
   }
 );
@@ -53,8 +50,7 @@ export const getMemberByIdSlice = createAsyncThunk("members/getMemberById", asyn
     const response = await getMemberByIdService(_memberId);
     return response;
   } catch (err) {
-    console.log(err);
-    return rejectWithValue(err);
+    return rejectWithValue(err.response.data);
   }
 });
 
@@ -63,7 +59,6 @@ export const editMemberByIdSlice = createAsyncThunk("members/editMemberById", as
     const response = await editMemberByIdService(_payload);
     return response;
   } catch (err) {
-    console.log(err);
     return rejectWithValue(err.response.data);
   }
 });
@@ -73,8 +68,7 @@ export const deleteMemberByIdSlice = createAsyncThunk("members/deleteMemberById"
     const response = await deleteMemberByIdService(_memberId);
     return response;
   } catch (err) {
-    console.log(err);
-    return rejectWithValue(err.response);
+    return rejectWithValue(err.response.data);
   }
 });
 
@@ -83,7 +77,6 @@ export const createMemberSlice = createAsyncThunk("members/createMember", async 
     const response = await createMemberService(_newMember);
     return response;
   } catch (err) {
-    console.log(err);
     return rejectWithValue(err.response.data);
   }
 });
@@ -93,7 +86,6 @@ export const changeIsEntrySlice = createAsyncThunk("members/isEntry", async () =
     const response = await changeIsEntryService();
     return response;
   } catch (err) {
-    console.log(err);
     return err.response.data;
   }
 });
@@ -103,7 +95,6 @@ export const changeIsFirstLoginSlice = createAsyncThunk("members/isFirstLogin", 
     const response = await changeIsFirstLoginService();
     return response;
   } catch (err) {
-    console.log(err);
     return err.response.data;
   }
 });
@@ -113,7 +104,6 @@ export const updateImgUrlSlice = createAsyncThunk("members/updateImgUrl", async 
     const response = await updateImgUrlService(_payload);
     return response;
   } catch (err) {
-    console.log(err);
     return rejectWithValue(err.response.data);
   }
 });
@@ -203,15 +193,15 @@ export const memberSlice = createSlice({
       .addCase(changeIsEntrySlice.rejected, (state, action) => {
         state.errors = action.payload;
       })
-      .addCase(getMemberByIdSlice.fulfilled, (state, action) => {
-        if (action.payload.id) {
-          state.currentMember = action.payload;
-          state.errors = {};
-        }
-      })
-      .addCase(getMemberByIdSlice.rejected, (state, action) => {
-        state.errors = action.payload;
-      })
+      // .addCase(getMemberByIdSlice.fulfilled, (state, action) => {
+      //   if (action.payload.id) {
+      //     state.currentMember = action.payload;
+      //     state.errors = {};
+      //   }
+      // })
+      // .addCase(getMemberByIdSlice.rejected, (state, action) => {
+      //   state.errors = action.payload;
+      // })
       .addCase(updateImgUrlSlice.fulfilled, (state, action) => {
         if (action.payload.id) {
           state.currentMember = action.payload;

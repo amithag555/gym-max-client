@@ -15,142 +15,154 @@ import {
   getTrainingPlansByMemberIdPageNumberAndPerPage,
 } from "../../services/training-plan.service";
 
-export const getTrainingPlanByIdSlice = createAsyncThunk("trainingPlan/getTrainingPlanById", async (_trainingPlanId) => {
-  try {
-    const response = await getTrainingPlanById(_trainingPlanId);
-    return response;
-  } catch (err) {
-    console.log(err.response.data.message);
-    return err;
+export const getTrainingPlanByIdSlice = createAsyncThunk(
+  "trainingPlan/getTrainingPlanById",
+  async (_trainingPlanId, { rejectWithValue }) => {
+    try {
+      const response = await getTrainingPlanById(_trainingPlanId);
+      return response;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
   }
-});
+);
 
 export const getTrainingPlansByPageNumberAndPerPageSlice = createAsyncThunk(
   "trainingPlan/getTrainingPlansByPageNumberAndPerPage",
-  async (_payload) => {
+  async (_payload, { rejectWithValue }) => {
     try {
       const response = await getTrainingPlansByPageNumberAndPerPage(_payload);
       return response;
     } catch (err) {
       console.log(err);
-      return err;
+      return rejectWithValue(err.response.data);
     }
   }
 );
 
 export const getTrainingPlansByMemberIdPageNumberAndPerPageSlice = createAsyncThunk(
   "trainingPlan/getTrainingPlansByMemberIdPageNumberAndPerPage",
-  async (_payload) => {
+  async (_payload, { rejectWithValue }) => {
     try {
       const response = await getTrainingPlansByMemberIdPageNumberAndPerPage(_payload);
       return response;
     } catch (err) {
-      console.log(err);
-      return err;
+      return rejectWithValue(err.response.data);
     }
   }
 );
 
 export const getAllTrainingPlansByMemberIdSlice = createAsyncThunk(
   "trainingPlan/getAllTrainingPlansByMemberId",
-  async (_memberId) => {
+  async (_memberId, { rejectWithValue }) => {
     try {
       const response = await getAllTrainingPlansByMemberId(_memberId);
       return response;
     } catch (err) {
-      console.log(err.response.data.message);
-      return err;
+      return rejectWithValue(err.response.data);
     }
   }
 );
 
-export const editTrainingPlanSlice = createAsyncThunk("trainingPlan/editTrainingPlan", async (_payload) => {
-  try {
-    const response = await editTrainingPlan(_payload);
-    return response;
-  } catch (err) {
-    console.log(err.response.data.message);
-    return err;
+export const editTrainingPlanSlice = createAsyncThunk(
+  "trainingPlan/editTrainingPlan",
+  async (_payload, { rejectWithValue }) => {
+    try {
+      const response = await editTrainingPlan(_payload);
+      return response;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
   }
-});
+);
 
-export const editPlanItemSlice = createAsyncThunk("trainingPlan/editPlanItem", async (_payload) => {
+export const editPlanItemSlice = createAsyncThunk("trainingPlan/editPlanItem", async (_payload, { rejectWithValue }) => {
   try {
     const response = await editPlanItem(_payload);
     return response;
   } catch (err) {
-    console.log(err.response.data.message);
-    return err;
+    return rejectWithValue(err.response.data);
   }
 });
 
-export const editPlanItemExerciseSlice = createAsyncThunk("trainingPlan/editPlanItemExercise", async (_payload) => {
-  try {
-    const response = await editPlanItemExercise(_payload);
-    return response;
-  } catch (err) {
-    console.log(err.response.data.message);
-    return err;
+export const editPlanItemExerciseSlice = createAsyncThunk(
+  "trainingPlan/editPlanItemExercise",
+  async (_payload, { rejectWithValue }) => {
+    try {
+      const response = await editPlanItemExercise(_payload);
+      return response;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
   }
-});
+);
 
-export const deletePlanItemExerciseSlice = createAsyncThunk("trainingPlan/deletePlanItemExercise", async (_exerciseId) => {
-  try {
-    const response = await deletePlanItemExercise(_exerciseId);
-    return response;
-  } catch (err) {
-    console.log(err.response.data.message);
-    return err;
+export const deletePlanItemExerciseSlice = createAsyncThunk(
+  "trainingPlan/deletePlanItemExercise",
+  async (_exerciseId, { rejectWithValue }) => {
+    try {
+      const response = await deletePlanItemExercise(_exerciseId);
+      return response;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
   }
-});
+);
 
-export const deletePlanItemSlice = createAsyncThunk("trainingPlan/deletePlanItem", async (_planItemId) => {
-  try {
-    const response = await deletePlanItem(_planItemId);
-    return response;
-  } catch (err) {
-    console.log(err.response.data.message);
-    return err;
+export const deletePlanItemSlice = createAsyncThunk(
+  "trainingPlan/deletePlanItem",
+  async (_planItemId, { rejectWithValue }) => {
+    try {
+      const response = await deletePlanItem(_planItemId);
+      return response;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
   }
-});
+);
 
-export const deleteTrainingPlanSlice = createAsyncThunk("trainingPlan/deleteTrainingPlan", async (_trainingPlanId) => {
-  try {
-    const response = await deleteTrainingPlan(_trainingPlanId);
-    return response;
-  } catch (err) {
-    console.log(err.response.data.message);
-    return err;
+export const deleteTrainingPlanSlice = createAsyncThunk(
+  "trainingPlan/deleteTrainingPlan",
+  async (_trainingPlanId, { rejectWithValue }) => {
+    try {
+      const response = await deleteTrainingPlan(_trainingPlanId);
+      return response;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
   }
-});
+);
 
-export const createTrainingPlanSlice = createAsyncThunk("trainingPlan/createTrainingPlan", async (_newTrainingPlan) => {
-  try {
-    const response = await createTrainingPlan(_newTrainingPlan);
-    return response;
-  } catch (err) {
-    console.log(err.response.data.message);
-    return err;
+export const createTrainingPlanSlice = createAsyncThunk(
+  "trainingPlan/createTrainingPlan",
+  async (_newTrainingPlan, { rejectWithValue }) => {
+    try {
+      const response = await createTrainingPlan(_newTrainingPlan);
+      return response;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
   }
-});
+);
 
-export const createPlanItemSlice = createAsyncThunk("trainingPlan/createPlanItem", async (_newPlanItem) => {
-  try {
-    const response = await createPlanItem(_newPlanItem);
-    return response;
-  } catch (err) {
-    console.log(err.response.data.message);
-    return err;
+export const createPlanItemSlice = createAsyncThunk(
+  "trainingPlan/createPlanItem",
+  async (_newPlanItem, { rejectWithValue }) => {
+    try {
+      const response = await createPlanItem(_newPlanItem);
+      return response;
+    } catch (err) {
+      return rejectWithValue(err.response.data);
+    }
   }
-});
+);
 
-export const createExerciseSlice = createAsyncThunk("trainingPlan/createExercise", async (_payload) => {
+export const createExerciseSlice = createAsyncThunk("trainingPlan/createExercise", async (_payload, { rejectWithValue }) => {
   try {
     const response = await createExercise(_payload.newExercise);
     return response;
   } catch (err) {
-    console.log(err.response.data.message);
-    return err;
+    return rejectWithValue(err.response.data);
   }
 });
 
@@ -202,14 +214,12 @@ export const trainingPlanSlice = createSlice({
       })
       .addCase(getTrainingPlansByPageNumberAndPerPageSlice.fulfilled, (state, action) => {
         state.trainingPlans = [...action.payload];
-        console.log(state.trainingPlans);
       })
       .addCase(getTrainingPlansByPageNumberAndPerPageSlice.rejected, (state, action) => {
         state.errors = action.payload;
       })
       .addCase(getTrainingPlansByMemberIdPageNumberAndPerPageSlice.fulfilled, (state, action) => {
         state.memberTrainingPlans = [...action.payload];
-        console.log(state.memberTrainingPlans);
       })
       .addCase(getTrainingPlansByMemberIdPageNumberAndPerPageSlice.rejected, (state, action) => {
         state.errors = action.payload;

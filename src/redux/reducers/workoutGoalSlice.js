@@ -13,8 +13,7 @@ export const getCurrentMemberWorkoutGoalSlice = createAsyncThunk("workoutGoal/ge
     const response = await getCurrentMemberWorkoutGoalService();
     return response;
   } catch (err) {
-    console.log(err.response.data.message);
-    return err;
+    return err.response.data;
   }
 });
 
@@ -25,8 +24,7 @@ export const getMemberWorkoutGoalsByYearSlice = createAsyncThunk(
       const response = await getMemberWorkoutGoalsByYearService(_year);
       return response;
     } catch (err) {
-      console.log(err.response.data.message);
-      return rejectWithValue(err);
+      return rejectWithValue(err.response.data);
     }
   }
 );
@@ -38,8 +36,7 @@ export const updateCurrentTrainingNumberByWorkoutGoalIdSlice = createAsyncThunk(
       const response = await updateCurrentTrainingNumberByWorkoutGoalIdService(_workoutGoalId);
       return response;
     } catch (err) {
-      console.log(err.response.data.message);
-      return rejectWithValue(err);
+      return rejectWithValue(err.response.data);
     }
   }
 );
@@ -51,8 +48,7 @@ export const createWorkoutGoalSlice = createAsyncThunk(
       const response = await createWorkoutGoalService(_newWorkoutGoal);
       return response;
     } catch (err) {
-      console.log(err.response.data.message);
-      return rejectWithValue(err);
+      return rejectWithValue(err.response.data);
     }
   }
 );
@@ -64,8 +60,7 @@ export const editCurrentWorkoutGoalSlice = createAsyncThunk(
       const response = await editCurrentWorkoutGoalService(_payload);
       return response;
     } catch (err) {
-      console.log(err.response.data.message);
-      return rejectWithValue(err);
+      return rejectWithValue(err.response.data);
     }
   }
 );
@@ -77,8 +72,7 @@ export const deleteWorkoutGoalByIdSlice = createAsyncThunk(
       const response = await deleteWorkoutGoalByIdService(_workoutGoalId);
       return response;
     } catch (err) {
-      console.log(err.response.data.message);
-      return rejectWithValue(err);
+      return rejectWithValue(err.response.data);
     }
   }
 );

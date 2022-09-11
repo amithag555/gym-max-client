@@ -41,14 +41,12 @@ export default function HomePageMember() {
 
     socket.on("adminConfirmClient", (_data) => {
       if (_data === socket.id) {
-        console.log(_data);
         setIsEntry(true);
       }
     });
 
     socket.on("adminUnconfirmedClient", (_data) => {
       if (_data === socket.id) {
-        console.log(_data);
         setIsDisabled(false);
       }
     });

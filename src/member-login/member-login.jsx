@@ -37,14 +37,10 @@ export default function MemberLogin() {
   });
 
   const handleRegistration = (data) => {
-    console.log(data);
-
     const memberDetails = {
       email: data.email,
       password: data.password,
     };
-
-    console.log(memberDetails);
 
     dispatch(memberLoginSlice(memberDetails));
   };

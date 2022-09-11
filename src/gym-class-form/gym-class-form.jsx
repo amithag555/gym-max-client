@@ -42,8 +42,8 @@ export default function GymClassForm(props) {
             ? `0${new Date(props.gymClassToEdit.startHour).getUTCHours()}`
             : new Date(props.gymClassToEdit.startHour).getUTCHours()
         }:${
-          new Date(props.gymClassToEdit.startHour).getUTCMinutes() === 0
-            ? "00"
+          new Date(props.gymClassToEdit.startHour).getUTCMinutes() < 10
+            ? `0${new Date(props.gymClassToEdit.startHour).getUTCMinutes()}`
             : new Date(props.gymClassToEdit.startHour).getUTCMinutes()
         }`,
         day: props.gymClassToEdit.day,
@@ -160,7 +160,7 @@ export default function GymClassForm(props) {
         props.setIsChanged(true);
       }
     } catch (error) {
-      console.error(error.message);
+      console.log(error.response.data);
     }
   };
 
@@ -172,7 +172,7 @@ export default function GymClassForm(props) {
         props.setIsChanged(true);
       }
     } catch (error) {
-      console.error(error.message);
+      console.log(error.response.data);
     }
   };
 
@@ -183,7 +183,7 @@ export default function GymClassForm(props) {
         props.setIsChanged(true);
       }
     } catch (error) {
-      console.error(error.message);
+      console.log(error.response.data);
     }
   };
 
