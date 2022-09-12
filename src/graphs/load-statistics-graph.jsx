@@ -16,7 +16,7 @@ export default function LoadStatisticsGraph(props) {
     if (props.currentDate === dateOfToday) {
       setIsNotExist(true);
     } else {
-      getWorkDayActivityByDate(props.currentDate);
+      getWorkDayActivityByDate(new Date(props.currentDate));
     }
   }, [props.currentDate]);
 
@@ -39,7 +39,7 @@ export default function LoadStatisticsGraph(props) {
       setActivitiesPerHour(tempActivitiesPerHour);
       setWorkDayActivityCount(response.count);
     } catch (error) {
-      console.error(error.response.data.message);
+      console.log(error.response.data.message);
     }
   };
 

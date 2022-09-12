@@ -29,7 +29,6 @@ export default function WorkoutGoal() {
                 className="text-center p-0"
                 style={{ width: "12%" }}
                 onClick={() => {
-                  console.log("onClick");
                   setIsEditMode(true);
                 }}
               >

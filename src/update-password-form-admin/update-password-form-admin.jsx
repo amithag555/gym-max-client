@@ -59,7 +59,7 @@ export default function UpdatePasswordFormAdmin(props) {
         props.setIsUpdatePasswordMode(false);
       }
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 

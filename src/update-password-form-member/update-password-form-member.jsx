@@ -60,7 +60,7 @@ export default function UpdatePasswordFormMember() {
         }
       }
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 

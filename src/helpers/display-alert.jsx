@@ -10,10 +10,12 @@ import { selectCurrentUser } from "../redux/reducers/authSlice";
 import { useNavigate } from "react-router-dom";
 import { ROLES } from "../config";
 import { deleteWorkoutGoalByIdSlice, selectCurrentWorkoutGoal } from "../redux/reducers/workoutGoalSlice";
+import { deleteMemberByIdSlice, selectCurrentMember } from "../redux/reducers/memberSlice";
 
 export default function DisplayAlert(props) {
   const [open, setOpen] = useState(false);
   const currentUser = useSelector(selectCurrentUser);
+  const currentMember = useSelector(selectCurrentMember);
   const currentWorkoutGoal = useSelector(selectCurrentWorkoutGoal);
 
   const navigation = useNavigate();
@@ -87,6 +89,7 @@ export default function DisplayAlert(props) {
       props.setIsMemberDeleteMode(false);
 
       if (e.target.id === "ok_btn") {
+        dispatch(deleteMemberByIdSlice(currentMember.id));
         props.setIsMemberDeleteConfirmation(true);
       }
     } else if (props.isUserDeleteMode) {

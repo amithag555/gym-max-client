@@ -118,7 +118,7 @@ export default function DisplayAllUsers() {
         getUsersCount();
       }
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
@@ -130,7 +130,7 @@ export default function DisplayAllUsers() {
         setUsersCount(response);
       }
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
@@ -142,7 +142,7 @@ export default function DisplayAllUsers() {
         setUsersCount(response);
       }
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
@@ -155,7 +155,7 @@ export default function DisplayAllUsers() {
         getSearchUsersCount(_payload.q);
       }
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
@@ -168,7 +168,7 @@ export default function DisplayAllUsers() {
         getUsersByPageNumberAndPerPage(_payload);
       }
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
@@ -261,11 +261,11 @@ export default function DisplayAllUsers() {
                             </td>
 
                             <td id={item.id} className="text-center">
-                              {!item.firstName && <span>-</span>}
+                              {!item.firstName ? <span>-</span> : item.firstName}
                             </td>
 
                             <td id={item.id} className="text-center">
-                              {!item.lastName && <span>-</span>}
+                              {!item.lastName ? <span>-</span> : item.lastName}
                             </td>
 
                             <td id={item.id} className="text-center">

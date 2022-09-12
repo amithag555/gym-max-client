@@ -70,7 +70,7 @@ export default function HomePageMember() {
     try {
       await decrementClubCountByIdService(_clubId);
     } catch (error) {
-      console.error(error.message);
+      console.log(error.message);
     }
   };
 
@@ -78,7 +78,7 @@ export default function HomePageMember() {
     try {
       await incrementClubCountByIdService(_clubId);
     } catch (error) {
-      console.error(error.message);
+      console.log(error.message);
     }
   };
 

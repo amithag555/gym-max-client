@@ -54,8 +54,6 @@ export default function AdminLayout() {
       });
 
       socket.on("memberEntryClient", (_data) => {
-        console.log(_data);
-
         tempMember = {
           id: _data[1],
           memberSocketId: _data[0],

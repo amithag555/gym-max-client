@@ -29,7 +29,6 @@ export default function WorkoutGoalStatisticsGraph() {
       };
     });
 
-    console.log(tempWorkoutGoals);
     setWorkoutGoals(tempWorkoutGoals);
   };
 

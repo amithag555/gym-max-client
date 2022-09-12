@@ -40,7 +40,7 @@ export default function DisplayClassesScheduleMember() {
 
       setGymClasses(response);
     } catch (error) {
-      console.error(error.message);
+      console.log(error.message);
     }
   };
 
@@ -56,7 +56,7 @@ export default function DisplayClassesScheduleMember() {
         setGymClasses(tempGymClasses);
       }
     } catch (error) {
-      console.error(error.message);
+      console.log(error.message);
     }
   };
 
@@ -72,8 +72,7 @@ export default function DisplayClassesScheduleMember() {
         setGymClasses(tempGymClasses);
       }
     } catch (error) {
-      console.error("error.message - in component");
-      console.error(error.message);
+      console.log(error.message);
     }
   };
 

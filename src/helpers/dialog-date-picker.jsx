@@ -16,11 +16,7 @@ export default function DialogDatePicker(props) {
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
-
-    const tempDate = new Date(date);
-    let formatDate = `${tempDate.getFullYear()}-${tempDate.getMonth() + 1}-${tempDate.getDate()}`;
-
-    props.setCurrentDate(formatDate);
+    props.setCurrentDate(date);
   };
 
   const handleYearChange = (date) => {

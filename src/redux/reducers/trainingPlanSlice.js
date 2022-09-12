@@ -34,7 +34,6 @@ export const getTrainingPlansByPageNumberAndPerPageSlice = createAsyncThunk(
       const response = await getTrainingPlansByPageNumberAndPerPage(_payload);
       return response;
     } catch (err) {
-      console.log(err);
       return rejectWithValue(err.response.data);
     }
   }

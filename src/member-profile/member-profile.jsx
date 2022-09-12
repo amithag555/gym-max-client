@@ -34,7 +34,6 @@ export default function MemberProfile() {
         formData.append("upload_preset", CLOUDINARY_PRESETS_NAME);
 
         const response = await (await cloudinaryApi.post("", formData)).data;
-        console.log(response);
 
         if (response) {
           const payload = {
@@ -47,7 +46,7 @@ export default function MemberProfile() {
           dispatch(updateImgUrlSlice(payload));
         }
       } catch (error) {
-        console.log(error);
+        console.log(error.response.data);
       }
     }
   };

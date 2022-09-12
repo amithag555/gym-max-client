@@ -81,7 +81,6 @@ export default function DisplayAllMembers() {
       setPageNumber(1);
       setPayload(1);
 
-      dispatch(deleteMemberByIdSlice(currentMember.id));
       dispatch(getMembersByPageNumberAndPerPageSlice(payload));
       getMembersCount();
       setIsMemberDeleteConfirmation(false);
@@ -125,7 +124,7 @@ export default function DisplayAllMembers() {
         setMembersCount(response);
       }
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
@@ -137,7 +136,7 @@ export default function DisplayAllMembers() {
         setMembersCount(response);
       }
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 

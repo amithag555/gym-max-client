@@ -19,7 +19,7 @@ export default function LiveLoadStatus() {
         setClub(response);
       }
     } catch (error) {
-      console.error(error.message);
+      console.log(error.message);
     }
   };
 

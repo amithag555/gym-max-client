@@ -141,7 +141,7 @@ export default function DisplayAllTrainingPlansAdmin() {
         setTrainingPlanCount(response);
       }
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
@@ -153,7 +153,7 @@ export default function DisplayAllTrainingPlansAdmin() {
         setTrainingPlanCount(response);
       }
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 

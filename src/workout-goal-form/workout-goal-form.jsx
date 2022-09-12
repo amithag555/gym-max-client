@@ -67,7 +67,6 @@ export default function WorkoutGoalForm(props) {
 
       const newWorkoutGoal = {
         trainingNumber: Number(data.trainingNumber),
-        memberId: currentUser.id,
       };
 
       dispatch(createWorkoutGoalSlice(newWorkoutGoal));

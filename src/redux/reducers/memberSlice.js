@@ -193,15 +193,15 @@ export const memberSlice = createSlice({
       .addCase(changeIsEntrySlice.rejected, (state, action) => {
         state.errors = action.payload;
       })
-      // .addCase(getMemberByIdSlice.fulfilled, (state, action) => {
-      //   if (action.payload.id) {
-      //     state.currentMember = action.payload;
-      //     state.errors = {};
-      //   }
-      // })
-      // .addCase(getMemberByIdSlice.rejected, (state, action) => {
-      //   state.errors = action.payload;
-      // })
+      .addCase(getMemberByIdSlice.fulfilled, (state, action) => {
+        if (action.payload.id) {
+          state.currentMember = action.payload;
+          state.errors = {};
+        }
+      })
+      .addCase(getMemberByIdSlice.rejected, (state, action) => {
+        state.errors = action.payload;
+      })
       .addCase(updateImgUrlSlice.fulfilled, (state, action) => {
         if (action.payload.id) {
           state.currentMember = action.payload;

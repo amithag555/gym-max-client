@@ -74,7 +74,7 @@ export default function DisplayClassesScheduleAdmin() {
 
       setGymClasses(gymClassesArr);
     } catch (error) {
-      console.error(error.response.data.message);
+      console.log(error.response.data.message);
     }
   };
 
